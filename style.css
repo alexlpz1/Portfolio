@@ -1,0 +1,665 @@
+/* Estilos responsivos */
+
+@media screen and (max-width: 1024px) {
+    #divPrincipal {
+        width: 90%;
+        margin-left: 5%;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 100px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    #iconsLeft, #iconsRight {
+        top: 2vh;
+    }
+    #iconsLeft i, #iconsRight i {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #divPrincipal {
+        width: 95%;
+        margin-left: 2.5%;
+    }
+    h1 {
+        font-size: 80px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+    #iconsLeft, #iconsRight {
+        position: relative;
+        justify-content: center;
+        gap: 10px;
+    }
+    .profile-section {
+        width: 80%;
+    }
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+    .contact-section {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    #iconsLeft, #iconsRight {
+        flex-direction: column;
+        gap: 5px;
+    }
+    #proyectos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .proyecto img {
+        width: 100px;
+    }
+    .contact-section {
+        width: 100%;
+    }
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('img/23625.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#divPrincipal {
+    width: 80%;
+    max-height: 3500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    margin-left: 10%;
+    margin-top: 2%;
+    border: 1px solid white;
+    border-radius: 21px;
+    position: relative;
+}
+
+h1 {
+    margin-top: 150px;
+    font-size: 150px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h2 {
+    
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#iconsLeft, #iconsRight {
+    position: absolute;
+    top: 5vh;
+    display: flex;
+    gap: 20px;
+    
+}
+
+#iconsLeft {
+    left: 5vw;
+}
+
+#iconsRight {
+    right: 5vw;
+}
+
+#iconsLeft i, #iconsRight i {
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Estilos para el menú de configuración */
+#settingsMenu {
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 150px;
+    z-index: 1000;
+    border-radius: 10px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#settingsMenu.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#settingsMenu ul {
+    list-style: none;
+    padding: 20px;
+}
+
+#settingsMenu ul li {
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+#settingsMenu ul li:hover {
+    color: #00b4fc;
+}
+
+/* Asegurarse que el menú sea visible cuando no está oculto */
+#settingsMenu:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode #divPrincipal {
+    background-color: black;
+}
+
+.dark-mode i {
+    color: white;
+}
+
+/* Modo claro */
+.light-mode {
+    background-image: none !important; /* Removemos la imagen de fondo */
+    background-color: rgb(170, 170, 170) !important;
+    color: black;
+}
+
+.light-mode #divPrincipal {
+    background-color: white;
+    border: 1px solid #333; /* Borde más oscuro para modo claro */
+}
+
+.light-mode i {
+    color: black !important;  
+}
+
+.light-mode h1, 
+.light-mode h2, 
+.light-mode p {
+    color: black;
+}
+
+/* Ajustes para el perfil en modo claro */
+.light-mode .profile-section {
+    background-color: #f5f5f5;
+    color: black;
+    border: 1px solid #ddd;
+}
+
+.light-mode .profile-details .tagline {
+    color: #ff4081;
+}
+
+.light-mode .profile-details .description {
+    color: #333;
+}
+
+.light-mode .meta-info {
+    color: #666;
+}
+
+/* Ajustes para la sección de contacto en modo claro */
+.light-mode .contact-section {
+    background-color: rgba(245, 245, 245, 0.9);
+    color: black;
+}
+
+.light-mode .contact-section p {
+    color: #333;
+}
+
+.light-mode .input-group input, 
+.light-mode .input-group textarea {
+    background-color: white;
+    color: black;
+    border: 1px solid #ddd;
+}
+
+/* Ajustes para el menú de configuración en modo claro */
+.light-mode #settingsMenu {
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode #settingsMenu ul li {
+    color: black;
+}
+
+.light-mode #settingsMenu ul li:hover {
+    color: #ff4081;
+}
+#settingsMenu:not(.hidden) {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilos para los iconos de redes sociales */
+#iconsLeft a i:hover {
+    color: #E1306C; /* Instagram */
+}
+
+#iconsLeft a:nth-child(2) i:hover {
+    color: #1DA1F2; /* Twitter */
+}
+
+#iconsLeft a:nth-child(3) i:hover {
+    color: #bebef3; /* Github */
+}
+
+/* Sección de perfil */
+.profile-section {
+    background-color: #252525;
+    color: white;
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.cover-photo {
+    height: 200px;
+    background-image: url('img/fotoPerfil.png');
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.profile-details {
+    position: relative;
+    top: -50px;
+    margin-bottom: -30px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ccc;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-details h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.profile-details .tagline {
+    font-size: 18px;
+    color: #00b4fc;
+}
+
+.profile-details .description {
+    font-size: 16px;
+    color: #b0b0b0;
+    margin: 10px 0;
+}
+
+.meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #a8a8a8;
+}
+
+.meta-info div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.meta-info a {
+    text-decoration: none;
+    color: #00b4fc;
+}
+
+.meta-info a:hover {
+    text-decoration: underline;
+}
+
+.follow-button {
+    background-color: #00b4fc;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.follow-button:hover {
+    background-color: #00b4fc;
+}
+
+.subscribe {
+    margin-top: 20px;
+}
+
+.subscribe p {
+    font-size: 16px;
+    color: #b0b0b0;
+}
+
+.subscribe form {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.subscribe input[type="email"] {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    width: 250px;
+}
+
+.subscribe button {
+    background-color: #00b4fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe button:hover {
+    background-color: rgb(91, 73, 255);
+}
+
+.note {
+    font-size: 12px;
+    color: #808080;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #00b4fc;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #494cff;
+}
+
+.hidden {
+    display: none;
+}
+#container {
+        display: flex;
+        max-width: 680px;
+        margin: 20px auto;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#container.hidden{
+    display: none;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: #008cff;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+#habilidades .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    border: 2px solid white;
+}
+
+.sidebar .contact-info {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.sidebar .contact-info li {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.sidebar .section {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.sidebar .section h3 {
+    margin-bottom: 10px;
+    color: #1b2f46;
+}
+
+.sidebar .section ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.sidebar .section ul li {
+    margin-bottom: 5px;
+}
+
+.main {
+    width: 70%;
+    padding: 20px;
+    margin-top: -100px;
+}
+
+.main h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.main .section {
+    margin-bottom: 20px;
+}
+
+.main .section h2 {
+    font-size: 18px;
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.main .section p,
+.main .section ul {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.main .section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+/* Contenedor principal */
+#proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 40px; /* Espaciado entre elementos */
+    position: relative;
+    margin: 50px auto;
+    max-width: 680px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Cada proyecto */
+.proyecto {
+    text-align: center;
+    position: relative;
+}
+
+.proyecto img {
+    width: 150px;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Flechas */
+#proyectos::before {
+    content: '';
+    position: absolute;
+    top: 20%; /* Ajusta según necesites */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black; /* Línea principal horizontal */
+}
+
+#proyectos .proyecto:nth-child(3)::after, 
+#proyectos .proyecto:nth-child(6)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 20px;
+    height: 2px;
+    background-color: black; /* Conexiones horizontales */
+}
+/* Sección de Contacto */
+.contact-section {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #b0b0b0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.input-group {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #2c2c2c;
+    color: white;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    outline: none;
+    border-color: #00b4fc;
+}
+
+button {
+    background-color: #00b4fc;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
